@@ -77,17 +77,17 @@ func run() {
 		sprite.Draw(win, pixel.IM.Moved(win.Bounds().Center()))
 		win.Update()
 
-	}
-	if showProgress {
-		fmt.Println("\r %d%d (%d%%)", pixelCount, pixelTotal, int(100*(float64(pixelCount)/float64(pixelTotal))))
+		if showProgress {
+			fmt.Println("\r %d%d (%d%%)", pixelCount, pixelTotal, int(100*(float64(pixelCount)/float64(pixelTotal))))
 
-	}
-	if pixelCount == pixelTotal {
-		end := time.Now()
-		fmt.Println("Completed in ", end.Sub(start))
-		pixelCount++
-		if classOnEnd {
-			break
+		}
+		if pixelCount == pixelTotal {
+			end := time.Now()
+			fmt.Println("Completed in ", end.Sub(start))
+			pixelCount++
+			if classOnEnd {
+				break
+			}
 		}
 	}
 }
